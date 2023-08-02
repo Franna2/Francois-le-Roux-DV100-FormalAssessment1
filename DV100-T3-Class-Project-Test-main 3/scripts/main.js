@@ -88,4 +88,35 @@ $("#plantsContainer").on('click', '.card', function(){
       $(this).closest("tr").remove();
     });
   });
+
   
+
+
+  // main.js
+
+$(document).ready(function() {
+  // Clone the plant card template and append it to the plantsContainer
+  function addPlantCard(name, price, description) {
+    var template = $("#plantCardTemplate").clone().contents();
+    template.find("#nameText").text(name);
+    template.find("#priceText").text(price);
+    template.find("#descriptionText").text(description);
+    template.removeClass("d-none");
+    $("#plantsContainer").append(template);
+  }
+
+  // Handle "Add to Wishlist" button click event
+  $(document).on("click", ".add-to-wishlist-button", function() {
+    var card = $(this).closest(".card");
+    var name = card.find("#nameText").text();
+    var price = card.find("#priceText").text();
+    var description = card.find("#descriptionText").text();
+
+    
+    console.log("Added to Wishlist:", name);
+
+    $(this).text("Added to Wishlist").removeClass("btn-primary").addClass("btn-success").prop("disabled", true);
+  });
+
+  addPlantCard("Ficus Tree", "R320", "Graceful and lush, this charming indoor plant...");
+});

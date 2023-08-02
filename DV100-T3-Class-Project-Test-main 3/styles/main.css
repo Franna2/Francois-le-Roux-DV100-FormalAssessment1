@@ -78,7 +78,7 @@ button {
     border-radius: 150px 150px 12px 12px;
     background: #F3F3F3;
     text-align: center;
-    height: 440px;
+    height: 500px;
     border: none;
 }
 
@@ -169,4 +169,7 @@ h1 {
     justify-content: center;
     width: 100%;
   }
-  
+
+  .plantrow{
+    height: 100px;
+  }
